@@ -20,6 +20,11 @@
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
 	}
+	else{
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/ObxhSgt.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/ObxhSgt.png";
+		$rep_msg['type']='image';
+	}
 		
 
 	$messages['messages'][0] =  $rep_msg;
