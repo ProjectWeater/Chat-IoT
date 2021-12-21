@@ -16,9 +16,13 @@
 	$messages['replyToken'] = $replyToken;
 	$rep_msg = [];
 
-	if($recv_msg == "Facebook") {
+	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
+	}else if($recv_msg == "อุณหภูมิ"){
+		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/1DY5M717fyGmPNDVyX9BCNFRn1ZeDbCXO/view?usp=sharing";
+		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/1DY5M717fyGmPNDVyX9BCNFRn1ZeDbCXO/view?usp=sharing";
+		$rep_msg['type']='image';
 	}else if($recv_msg == "Instagram") {
 		$url = "https://api.thingspeak.com/channels/1483851/feeds.json?results=1";
 		$strRet = file_get_contents($url);
