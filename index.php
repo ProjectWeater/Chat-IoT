@@ -20,28 +20,28 @@
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
 	}else if($recv_msg == "อุณหภูมิ"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/1DY5M717fyGmPNDVyX9BCNFRn1ZeDbCXO/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/1DY5M717fyGmPNDVyX9BCNFRn1ZeDbCXO/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/sWjXkj7.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/sWjXkj7.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "ฝน"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/10xTPIz_GvgqJto4K7jagRn_GsvmN3o7h/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/10xTPIz_GvgqJto4K7jagRn_GsvmN3o7h/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/6nrfP3W.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/6nrfP3W.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "อาทิตย์ขึ้น-ตก"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/1qatdGiOlS1QjBUeure-0AkFtHnwGeZkJ/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/1qatdGiOlS1QjBUeure-0AkFtHnwGeZkJ/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/Z4scB8I.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/Z4scB8I.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "คุณภาพอากาศ"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/1kdtUwcZrxY6lvKKXle70dGCB-BBvZp4o/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/1kdtUwcZrxY6lvKKXle70dGCB-BBvZp4o/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/turjucC.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/turjucC.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "รูปภาพสถานที่"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/18MdF4xNc4_IpDlMBR4zd1roYmBKzcSz7/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/18MdF4xNc4_IpDlMBR4zd1roYmBKzcSz7/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "Dashboard"){
-		$rep_msg['originalContentUrl'] = "https://drive.google.com/file/d/10XbOjIjOwNIpIG5yMHH7dd4Yl0pUzn96/view?usp=sharing";
-		$rep_msg['previewImageUrl'] = "https://drive.google.com/file/d/10XbOjIjOwNIpIG5yMHH7dd4Yl0pUzn96/view?usp=sharing";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/6CX7IMx.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/6CX7IMx.png";
 		$rep_msg['type']='image';
 	}
 	// }else if($recv_msg == "Instagram") {
