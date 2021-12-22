@@ -20,20 +20,20 @@
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
 	}else if($recv_msg == "อุณหภูมิ"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/sWjXkj7.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/sWjXkj7.png";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/nhzqdHC.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/nhzqdHC.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "ฝน"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/6nrfP3W.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/6nrfP3W.png";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/cOBnXDr.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/cOBnXDr.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "อาทิตย์ขึ้น-ตก"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/Z4scB8I.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/Z4scB8I.png";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/phdTm9M.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/phdTm9M.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "คุณภาพอากาศ"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/turjucC.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/turjucC.png";
+		$rep_msg['originalContentUrl'] = "https://i.imgur.com/IZ1FUsD.png";
+		$rep_msg['previewImageUrl'] = "https://i.imgur.com/IZ1FUsD.png";
 		$rep_msg['type']='image';
 	}else if($recv_msg == "รูปภาพสถานที่"){
 		$rep_msg['originalContentUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
