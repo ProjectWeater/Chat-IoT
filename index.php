@@ -78,15 +78,15 @@
 		$strRet = json_decode($strRet);
 		$dash = $strRet->channel[0]->field5;
 		$rep_msg['text'] = $dash;
-		$rep_msg['type']='text';
-	}else if($recv_msg == "รูปภาพ"){
-		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$pic = $strRet->feeds[0]->field4;
-		$rep_msg['image'] = "https://i.imgur.com/"+$pic".png";
-		$rep_msg['type']='image';
-	}
+		$rep_msg['type']='text';}
+	// }else if($recv_msg == "รูปภาพ"){
+	// 	$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+	// 	$strRet = file_get_contents($url);
+	// 	$strRet = json_decode($strRet);
+	// 	$pic = $strRet->feeds[0]->field4;
+	// 	$rep_msg['image'] = "https://i.imgur.com/"+$pic".png";
+	// 	$rep_msg['type']='image';
+	// }
 	else{
 		$rep_msg['originalContentUrl'] = "https://i.imgur.com/ObxhSgt.png";
 		$rep_msg['previewImageUrl'] = "https://i.imgur.com/ObxhSgt.png";
