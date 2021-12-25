@@ -19,53 +19,74 @@
 	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
-	}else if($recv_msg == "อุณหภูมิ"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/nhzqdHC.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/nhzqdHC.png";
-		$rep_msg['type']='image';
-	}else if($recv_msg == "ฝน"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/cOBnXDr.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/cOBnXDr.png";
-		$rep_msg['type']='image';
-	}else if($recv_msg == "อาทิตย์ขึ้น-ตก"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/phdTm9M.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/phdTm9M.png";
-		$rep_msg['type']='image';
-	}else if($recv_msg == "คุณภาพอากาศ"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/IZ1FUsD.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/IZ1FUsD.png";
-		$rep_msg['type']='image';
-	}else if($recv_msg == "รูปภาพสถานที่"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
-		$rep_msg['type']='image';
-	}else if($recv_msg == "Dashboard"){
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/6CX7IMx.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/6CX7IMx.png";
-		$rep_msg['type']='image';
-	}
-	// }else if($recv_msg == "Instagram") {
-	// 	$url = "https://api.thingspeak.com/channels/1483851/feeds.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$temp = $strRet->feeds[0]->field2;
-	// 	$rep_msg['text'] = $temp;
-	// 	$rep_msg['type']='text';
-	// }else if($recv_msg == "ความชื้น") {
-	// 	$url = "https://api.thingspeak.com/channels/1483851/feeds.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$temp = $strRet->feeds[0]->field1;
-	// 	$rep_msg['text'] = $temp;
-	// 	$rep_msg['type']='text';
-	// }else if($recv_msg == "รูปภาพ"){
-	// 	$url = "http://api.thingspeak.com/channels/1486243/feeds.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$pic = $strRet->feeds[0]->field4;
-	// 	$rep_msg['image'] = "https://i.imgur.com/"+$pic".png";
+	// }else if($recv_msg == "อุณหภูมิ"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/nhzqdHC.png";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/nhzqdHC.png";
+	// 	$rep_msg['type']='image';
+	// }else if($recv_msg == "ฝน"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/cOBnXDr.png";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/cOBnXDr.png";
+	// 	$rep_msg['type']='image';
+	// }else if($recv_msg == "อาทิตย์ขึ้น-ตก"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/phdTm9M.png";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/phdTm9M.png";
+	// 	$rep_msg['type']='image';
+	// }else if($recv_msg == "คุณภาพอากาศ"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/IZ1FUsD.png";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/IZ1FUsD.png";
+	// 	$rep_msg['type']='image';
+	// }else if($recv_msg == "รูปภาพสถานที่"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
+	// 	$rep_msg['type']='image';
+	// }else if($recv_msg == "Dashboard"){
+	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/6CX7IMx.png";
+	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/6CX7IMx.png";
 	// 	$rep_msg['type']='image';
 	// }
+	}else if($recv_msg == "อุณหภูมิ") {
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$temp = $strRet->name[0]->field1;
+		$rep_msg['text'] = $temp;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "ฝน") {
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$rain = $strRet->name[0]->field2;
+		$rep_msg['text'] = $rain;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "คุณภาพอากาศ") {
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$pm = $strRet->name[0]->field3;
+		$rep_msg['text'] = $pm;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "รูปภาพสถานที่") {
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$pict = $strRet->name[0]->field4;
+		$rep_msg['text'] = $pict;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "Dashboard") {
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$dash = $strRet->name[0]->field5;
+		$rep_msg['text'] = $dash;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "รูปภาพ"){
+		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$pic = $strRet->feeds[0]->field4;
+		$rep_msg['image'] = "https://i.imgur.com/"+$pic".png";
+		$rep_msg['type']='image';
+	}
 	else{
 		$rep_msg['originalContentUrl'] = "https://i.imgur.com/ObxhSgt.png";
 		$rep_msg['previewImageUrl'] = "https://i.imgur.com/ObxhSgt.png";
