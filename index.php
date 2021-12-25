@@ -48,35 +48,35 @@
 		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$temp = $strRet->name[0]->field1;
+		$temp = $strRet->channel[0]->field1;
 		$rep_msg['text'] = $temp;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$rain = $strRet->name[0]->field2;
+		$rain = $strRet->channel[0]->field2;
 		$rep_msg['text'] = $rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
 		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$pm = $strRet->name[0]->field3;
+		$pm = $strRet->channel[0]->field3;
 		$rep_msg['text'] = $pm;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพสถานที่") {
 		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$pict = $strRet->name[0]->field4;
+		$pict = $strRet->channel[0]->field4;
 		$rep_msg['text'] = $pict;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "Dashboard") {
 		$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$dash = $strRet->name[0]->field5;
+		$dash = $strRet->channel[0]->field5;
 		$rep_msg['text'] = $dash;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพ"){
