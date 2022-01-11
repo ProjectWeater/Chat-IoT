@@ -45,35 +45,35 @@
 	// 	$rep_msg['type']='image';
 	// }
 	}else if($recv_msg == "อุณหภูมิ") {
-		$url = "https://api.thingspeak.com/channels/1461270/feeds.json?results=1";
+		$url = "https://api.thingspeak.com/channels/1555446/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
 		$rep_msg['text'] = $temp;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ฝน") {
-		$url = "https://api.thingspeak.com/channels/1461270/feeds.json?results=1";
+		$url = "https://api.thingspeak.com/channels/1555446/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field2;
 		$rep_msg['text'] = $rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
-		$url = "https://api.thingspeak.com/channels/1461270/feeds.json?results=1";
+		$url = "https://api.thingspeak.com/channels/1555446/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$pm = $strRet->feeds[0]->field3;
 		$rep_msg['text'] = $pm;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพสถานที่") {
-		$url = "https://api.thingspeak.com/channels/1461270/feeds.json?results=1";
+		$url = "https://api.thingspeak.com/channels/1555446/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$pict = $strRet->feeds[0]->field4;
 		$rep_msg['text'] = $pict;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "Dashboard") {
-		$url = "https://api.thingspeak.com/channels/1461270/feeds.json?results=1";
+		$url = "https://api.thingspeak.com/channels/1555446/fields/1.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$dash = $strRet->feeds[0]->field5;
