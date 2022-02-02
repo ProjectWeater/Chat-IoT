@@ -49,7 +49,7 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
-		{
+		$temp {
 			"type": "bubble",
 			"body": {
 			  "type": "box",
@@ -81,8 +81,8 @@
 			  ]
 			}
 		  }
-		$rep_msg['originalContentUrl'] = imagettftext;
-		$rep_msg['previewImageUrl'] = imagettftext;
+		$rep_msg['originalContentUrl'] = $temp;
+		$rep_msg['previewImageUrl'] = $temp;
 		$rep_msg['type']='image';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
