@@ -49,41 +49,22 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
-		$temp {
-			"type": "bubble",
-			"body": {
-			  "type": "box",
-			  "layout": "horizontal",
-			  "contents": [
-				{
-				  "type": "box",
-				  "layout": "vertical",
-				  "contents": [
-					{
-					  "type": "image",
-					  "image": "hot.png",
-					  "aspectRatio": "1:2",
-					  "aspectMode": "cover"
-					}
-				  ]
-				},
-				{
-				  "type": "box",
-				  "layout": "vertical",
-				  "contents": 
-					{
-					  "type": "text",
-					  "text": "flex=1",
-					  "flex": 1,
-					  "gravity": "center"
-					},
-				}
-			  ]
-			}
-		  }
-		$rep_msg['originalContentUrl'] = $temp;
-		$rep_msg['previewImageUrl'] = $temp;
-		$rep_msg['type']='image';
+		$img = imagecreatfromjpeg("hot.png");
+		$black = imagecolorallocate($img,0,0,0);
+		$font = "C:\Windows\Fonts\arial.ttf";
+		$txt = "Hello Welcome";
+		imagettftext(
+			$img,
+			24,
+			0,
+			5, 24,
+			$black,
+			$font,
+			$txt
+		);
+		// $rep_msg['originalContentUrl'] = imagettftext;
+		// $rep_msg['previewImageUrl'] = imagettftext;
+		// $rep_msg['type']='image';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
