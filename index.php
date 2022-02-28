@@ -19,57 +19,16 @@
 	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
-	// }else if($recv_msg == "อุณหภูมิ"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/nhzqdHC.png";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/nhzqdHC.png";
-	// 	$rep_msg['type']='image';
-	// }else if($recv_msg == "ฝน"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/cOBnXDr.png";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/cOBnXDr.png";
-	// 	$rep_msg['type']='image';
-	// }else if($recv_msg == "อาทิตย์ขึ้น-ตก"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/phdTm9M.png";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/phdTm9M.png";
-	// 	$rep_msg['type']='image';
-	// }else if($recv_msg == "คุณภาพอากาศ"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/IZ1FUsD.png";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/IZ1FUsD.png";
-	// 	$rep_msg['type']='image';
-	// }else if($recv_msg == "รูปภาพสถานที่"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/JTU1rB4.jpg";
-	// 	$rep_msg['type']='image';
-	// }else if($recv_msg == "Dashboard"){
-	// 	$rep_msg['originalContentUrl'] = "https://i.imgur.com/6CX7IMx.png";
-	// 	$rep_msg['previewImageUrl'] = "https://i.imgur.com/6CX7IMx.png";
-	// 	$rep_msg['type']='image';
-	// }
 	}else if($recv_msg == "อุณหภูมิ") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
-		$img = imagecreatfromjpeg("hot.png");
-		$black = imagecolorallocate($img,0,0,0);
-		$font = "C:\Windows\Fonts\arial.ttf";
-		$txt = "Hello Welcome";
-		imagettftext(
-			$img,
-			24,
-			0,
-			5, 24,
-			$black,
-			$font,
-			$txt
-		);
-		// $rep_msg['originalContentUrl'] = imagettftext;
-		// $rep_msg['previewImageUrl'] = imagettftext;
-		// $rep_msg['type']='image';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$rain = $strRet->feeds[0]->field2;
+		$rain = $strRet->feeds[0]->field6;
 		$rep_msg['text'] = $rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
@@ -83,28 +42,27 @@
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$pict = $strRet->feeds[0]->field4;
+		$pict = $strRet->feeds[0]->field8;
 		$rep_msg['text'] = $pict;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
+		$url = "https://api.sunrise-sunset.org/json?";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$sunset = $strRet->results->sunset;
+		$sunrise = $strRet->results->sunrise;
+		$sunset = "- อาทิตย์ตก"+ $sunset;
+		$sunrise = "\n - อาทิตย์ขึ้น"+ $sunrise;
+		$rep_msg['text'] = $sunrise + $sunset;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "Dashboard") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$dash = $strRet->feeds[0]->field5;
-		$rep_msg['text'] = $dash;
-		$rep_msg['type']='text';}
-	// }else if($recv_msg == "รูปภาพ"){
-	// 	$url = "https://api.thingspeak.com/channels/1461270/fields/1.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$pic = $strRet->feeds[0]->field4;
-	// 	$rep_msg['image'] = "https://i.imgur.com/"+$pic".png";
-	// 	$rep_msg['type']='image';
-	// }
+		$rep_msg['link'] = $url;
+		$rep_msg['type']='link';}
 	else{
-		$rep_msg['originalContentUrl'] = "https://i.imgur.com/ObxhSgt.png";
-		$rep_msg['previewImageUrl'] = "https://i.imgur.com/ObxhSgt.png";
-		$rep_msg['type']='image';
+		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
+		$rep_msg['text'] = $nsend;
+		$rep_msg['type']='text';}
 	}
 		
 
