@@ -58,8 +58,7 @@
 		$rep_msg['text'] = "$sunset2 $sunrise2" ;
 		$rep_msg['type']='text';}
 	}else if($recv_msg == "Dashboard") {
-		$url = "https://www.facebook.com/profile.php?id=100004107043003";
-		$rep_msg['text'] = "$url";
+		$rep_msg['text'] = "https://www.facebook.com/profile.php?id=100004107043003";
 		$rep_msg['type']='text';}
 	// else{
 	// 	$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
