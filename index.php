@@ -24,7 +24,7 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
-		$rep_msg['text'] = number_format($temp,2 'องศา');
+		$rep_msg['text'] = number_format($temp,2);
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
