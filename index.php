@@ -33,13 +33,13 @@
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field6;
 		if ($rain >= 90.1){
-			$lv_rain == "ฝนตกหนักมาก";
+			$rain == "ฝนตกหนักมาก";
 		}else if ($rain >= 35.1){
-			$lv_rain == "ฝนตกหนัก";
+			$rain == "ฝนตกหนัก";
 		}else if ($rain >= 10.1){
-			$lv_rain == "ฝนตกปานกลาง";
+			$rain == "ฝนตกปานกลาง";
 		}else {
-			$lv_rain == "ฝนตกเล็กน้อย";
+			$rain == "ฝนตกเล็กน้อย";
 		}
 		$rep_msg['text'] = $rain;
 		$rep_msg['type']='text';
