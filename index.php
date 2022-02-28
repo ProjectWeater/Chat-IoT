@@ -40,7 +40,7 @@
 			$lv_rain == "ฝนตกปานกลาง";
 		}else {
 			$lv_rain == "ฝนตกเล็กน้อย";
-		}
+		}return $lv_rain;
 		$rep_msg['text'] = $lv_rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
