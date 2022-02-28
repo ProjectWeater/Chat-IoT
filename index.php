@@ -33,15 +33,15 @@
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field6;
 		if ($rain >= 90.1){
-			$rain == "ฝนตกหนักมาก";
+			$lv_rain = "ฝนตกหนักมาก";
 		}else if ($rain >= 35.1){
-			$rain == "ฝนตกหนัก";
+			$lv_rain = "ฝนตกหนัก";
 		}else if ($rain >= 10.1){
-			$rain == "ฝนตกปานกลาง";
+			$lv_rain = "ฝนตกปานกลาง";
 		}else {
-			$rain == "ฝนตกเล็กน้อย";
+			$lv_rain = "ฝนตกเล็กน้อย";
 		}
-		$rep_msg['text'] = $rain;
+		$rep_msg['text'] = $lv_rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
