@@ -38,8 +38,10 @@
 			$lv_rain = "ฝนตกหนัก";
 		}else if ($rain >= 10.1){
 			$lv_rain = "ฝนตกปานกลาง";
-		}else {
+		}else if ($rain >= 0.1){
 			$lv_rain = "ฝนตกเล็กน้อย";
+		}else {
+			$lv_rain = "ฝนตกไม่ตก";
 		}
 		$rep_msg['text'] = $lv_rain;
 		$rep_msg['type']='text';
