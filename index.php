@@ -31,7 +31,6 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field6;
-		$rain = number_format($rain,2);
 		// if ($rain >= 90.1){
 		// 	$rain == "ฝนตกหนักมาก";
 		// }else if ($rain >= 35.1){
