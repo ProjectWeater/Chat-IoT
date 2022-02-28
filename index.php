@@ -46,17 +46,17 @@
 		$strRet = json_decode($strRet);
 		$pict = $strRet->feeds[0]->field7;
 		$rep_msg['text'] = $pict;
+		$rep_msg['type']='text';
+	}else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
+		$url = "https://api.sunrise-sunset.org/json?";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$sunset = $strRet->results->sunset;
+		$sunrise = $strRet->results->sunrise;
+		$sunset2 = "- อาทิตย์ตก"+ $sunset;
+		$sunrise2 = "\n - อาทิตย์ขึ้น"+ $sunrise;
+		$rep_msg['text'] = $sunrise2 + $sunset2;
 		$rep_msg['type']='text';}
-	// }else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
-	// 	$url = "https://api.sunrise-sunset.org/json?";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$sunset = $strRet->results->sunset;
-	// 	$sunrise = $strRet->results->sunrise;
-	// 	$sunset = "- อาทิตย์ตก"+ $sunset;
-	// 	$sunrise = "\n - อาทิตย์ขึ้น"+ $sunrise;
-	// 	$rep_msg['text'] = $sunrise + $sunset;
-	// 	$rep_msg['type']='text';
 	// }else if($recv_msg == "Dashboard") {
 	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 	// 	$rep_msg['link'] = $url;
