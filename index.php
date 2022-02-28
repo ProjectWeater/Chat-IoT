@@ -26,13 +26,13 @@
 		$temp = $strRet->feeds[0]->field1;
 		$rep_msg['text'] = number_format($temp,2 "องศา");
 		$rep_msg['type']='text';
-	// }else if($recv_msg == "ฝน") {
-	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$rain = $strRet->feeds[0]->field6;
-	// 	$rep_msg['text'] = number_format($rain,0 "ลูกบาศลิตร");
-	// 	$rep_msg['type']='text';
+	}else if($recv_msg == "ฝน") {
+		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$rain = $strRet->feeds[0]->field6;
+		$rep_msg['text'] = $rain;
+		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
