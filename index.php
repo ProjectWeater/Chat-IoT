@@ -18,12 +18,12 @@
 
 	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
-		$rep_msg ['type'] = 'text';}
-	// }else if($recv_msg == "อุณหภูมิ") {
-	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-	// 	$strRet = file_get_contents($url);
-	// 	$strRet = json_decode($strRet);
-	// 	$temp = $strRet->feeds[0]->field1;
+		$rep_msg ['type'] = 'text';
+	}else if($recv_msg == "อุณหภูมิ") {
+		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$temp = $strRet->feeds[0]->field1;}
 	// }else if($recv_msg == "ฝน") {
 	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 	// 	$strRet = file_get_contents($url);
