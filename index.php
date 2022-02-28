@@ -63,7 +63,7 @@
 	}else{
 		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
 		$rep_msg['text'] = $nsend;
-		$rep_msg['type']='text';}
+		$rep_msg['type']='text';
 	}
 		
 
