@@ -56,7 +56,7 @@
 		$sunset2 = "อาทิตย์ตก $sunset";
 		$sunrise2 = "\nอาทิตย์ขึ้น $sunrise";
 		$rep_msg['text'] = "$sunset2 $sunrise2" ;
-		$rep_msg['type']='text';}
+		$rep_msg['type']='text';
 	}else if($recv_msg == "Dashboard") {
 		$rep_msg['text'] = "https://www.facebook.com/profile.php?id=100004107043003";
 		$rep_msg['type']='text';}
