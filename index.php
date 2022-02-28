@@ -32,15 +32,15 @@
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field6;
 		$rain = number_format($rain,2);
-		if ($rain >= 90.1){
-			$rain == "ฝนตกหนักมาก";
-		}else if ($rain >= 35.1){
-			$rain == "ฝนตกหนัก";
-		}else if ($rain >= 10.1){
-			$rain == "ฝนตกปานกลาง";
-		}else {
-			$rain == "ฝนตกเล็กน้อย";
-		}
+		// if ($rain >= 90.1){
+		// 	$rain == "ฝนตกหนักมาก";
+		// }else if ($rain >= 35.1){
+		// 	$rain == "ฝนตกหนัก";
+		// }else if ($rain >= 10.1){
+		// 	$rain == "ฝนตกปานกลาง";
+		// }else {
+		// 	$rain == "ฝนตกเล็กน้อย";
+		// }
 		$rep_msg['text'] = $rain;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "คุณภาพอากาศ") {
