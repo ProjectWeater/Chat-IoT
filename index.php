@@ -48,7 +48,18 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$pm = $strRet->feeds[0]->field3;
-		$rep_msg['text'] = $pm;
+		if ($pm >= 201){
+			$lv_pm = "คุณภาพอากาศมีผลกระทบต่อสุขภาพ";
+		}else if ($pm >= 101){
+			$lv_pm  = "คุณภาพอากาศเริ่มมีผลกระทบต่อสุขภาพ";
+		}else if ($pm >= 51){
+			$lv_pm  = "คุณภาพอากาศปานกลาง";
+		}else if ($pm >= 26){
+			$lv_pm  = "คุณภาพอากาศดี";
+		}else {
+			$lv_pm = "คุณภาพอากาศดีมาก";
+		}
+		$rep_msg['text'] = $lv_pm;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพสถานที่") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
