@@ -53,8 +53,8 @@
 		$strRet = json_decode($strRet);
 		$sunset = $strRet->results->sunset;
 		$sunrise = $strRet->results->sunrise;
-		$sunset2 = "- อาทิตย์ตก"+ $sunset;
-		$sunrise2 = "\n - อาทิตย์ขึ้น"+ $sunrise;
+		$sunset2 = "- อาทิตย์ตก"$sunset;
+		$sunrise2 = "\n - อาทิตย์ขึ้น"$sunrise;
 		$rep_msg['text'] = $sunset2 ;
 		$rep_msg['type']='text';}
 	// }else if($recv_msg == "Dashboard") {
