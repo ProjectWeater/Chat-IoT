@@ -61,7 +61,7 @@
 		$rep_msg['text'] = "https://www.facebook.com/profile.php?id=100004107043003";
 		$rep_msg['type']='text';
 	}else{
-		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
+		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';
 	}
