@@ -55,7 +55,7 @@
 		$sunrise = $strRet->results->sunrise;
 		// $sunset2 = "- อาทิตย์ตก"+ $sunset;
 		// $sunrise2 = "\n - อาทิตย์ขึ้น"+ $sunrise;
-		$rep_msg['text'] = $sunset ;
+		$rep_msg['text'] = $sunrise ;
 		$rep_msg['type']='text';}
 	// }else if($recv_msg == "Dashboard") {
 	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
