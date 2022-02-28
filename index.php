@@ -39,33 +39,33 @@
 		$strRet = json_decode($strRet);
 		$pm = $strRet->feeds[0]->field3;
 		$rep_msg['text'] = $pm;
-		$rep_msg['type']='text';
-	}else if($recv_msg == "รูปภาพสถานที่") {
-		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$pict = $strRet->feeds[0]->field7;
-		$rep_msg['text'] = $pict;
-		$rep_msg['type']='text';
-	}else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
-		$url = "https://api.sunrise-sunset.org/json?";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$sunset = $strRet->results->sunset;
-		$sunrise = $strRet->results->sunrise;
-		$sunset = "- อาทิตย์ตก"+ $sunset;
-		$sunrise = "\n - อาทิตย์ขึ้น"+ $sunrise;
-		$rep_msg['text'] = $sunrise + $sunset;
-		$rep_msg['type']='text';
-	}else if($recv_msg == "Dashboard") {
-		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-		$rep_msg['link'] = $url;
-		$rep_msg['type']='link';}
-	else{
-		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
-		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';}
-	}
+	// }else if($recv_msg == "รูปภาพสถานที่") {
+	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+	// 	$strRet = file_get_contents($url);
+	// 	$strRet = json_decode($strRet);
+	// 	$pict = $strRet->feeds[0]->field7;
+	// 	$rep_msg['text'] = $pict;
+	// 	$rep_msg['type']='text';
+	// }else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
+	// 	$url = "https://api.sunrise-sunset.org/json?";
+	// 	$strRet = file_get_contents($url);
+	// 	$strRet = json_decode($strRet);
+	// 	$sunset = $strRet->results->sunset;
+	// 	$sunrise = $strRet->results->sunrise;
+	// 	$sunset = "- อาทิตย์ตก"+ $sunset;
+	// 	$sunrise = "\n - อาทิตย์ขึ้น"+ $sunrise;
+	// 	$rep_msg['text'] = $sunrise + $sunset;
+	// 	$rep_msg['type']='text';
+	// }else if($recv_msg == "Dashboard") {
+	// 	$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+	// 	$rep_msg['link'] = $url;
+	// 	$rep_msg['type']='link';}
+	// else{
+	// 	$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ"
+	// 	$rep_msg['text'] = $nsend;
+	// 	$rep_msg['type']='text';}
+	// }
 		
 
 	$messages['messages'][0] =  $rep_msg;
