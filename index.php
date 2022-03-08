@@ -64,12 +64,9 @@
 		$rep_msg['text'] = $lv_pm;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพสถานที่") {
-		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$pict = $strRet->feeds[0]->field7;
-		$rep_msg['text'] = $pict;
-		$rep_msg['type']='text';
+		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['type']='image';
 	}else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
 		$url = "https://api.sunrise-sunset.org/json?";
 		$strRet = file_get_contents($url);
