@@ -41,7 +41,7 @@
 		}else if ($rain >= 0.1){
 			$lv_rain = "ฝนตกเล็กน้อย";
 		}else {
-			$lv_rain = "ฝนตกไม่ตก";
+			$lv_rain = "ฝนไม่ตก";
 		}
 		$rep_msg['text'] = $lv_rain;
 		$rep_msg['type']='text';
