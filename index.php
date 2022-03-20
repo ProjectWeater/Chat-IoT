@@ -168,7 +168,7 @@
 	}
 		
 
-	$messages['messages'][0] =  ($rep_msg or $rep_msg2);
+	$messages['messages'][1] =  ($rep_msg , $rep_msg2);
 
 	$encodeJson = json_encode($messages);
 
