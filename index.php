@@ -157,12 +157,12 @@
 		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['type']='text';
 		$rep_msg['type']='image';
-	}if ($recv_msg == "ภาพรวม"){
+	}else if ($recv_msg == "ภาพรวม"){
 		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['type']='image';
 	}else{
-		$nsend = "ท่านสามารถกดเมนูหรือพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ความชื้น \n - PM 2.5 \n - ฝน \n - ลม \n ภาพรวม \nขอบคุณครับ";
+		$nsend = "ท่านสามารถกดเมนูหรือพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ความชื้น \n - PM 2.5 \n - ฝน \n - ลม \n - ภาพรวม \nขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';
 	}
