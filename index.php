@@ -165,7 +165,7 @@
 		
 
 	$messages['messages'][0] =  $rep_msg;
-	$messages1['messages'][0] =  $rep_msg2;
+	$messages1['messages'][1] =  $rep_msg2;
 
 	$encodeJson = json_encode($messages,$messages1);
 
