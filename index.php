@@ -148,7 +148,7 @@
 		}else if ($wind_direc >= 45){
 			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงเหนือ";
 		}
-		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain มิลลิเมตร \5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg km/h";
+		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain มิลลิเมตร \n5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg km/h";
 		$rep_msg2['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg2['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg2['type']='image';
