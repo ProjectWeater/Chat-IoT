@@ -35,6 +35,24 @@
 		$hum2 = number_format($hum,0);
 		$rep_msg['text'] = "ความชื้นสัมพัทธ์ในอากาศ $hum2 %";
 		$rep_msg['type']='text';
+	}else if($recv_msg == "PM 2.5") {
+		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$pm = $strRet->feeds[0]->field3;
+		if ($pm >= 201){
+			$lv_pm = "คุณภาพอากาศตอนนี้มีผลกระทบต่อสุขภาพ";
+		}else if ($pm >= 101){
+			$lv_pm  = "คุณภาพอากาศตอนนี้เริ่มมีผลกระทบต่อสุขภาพ";
+		}else if ($pm >= 51){
+			$lv_pm  = "คุณภาพอากาศตอนนี้อยู่ระดับปานกลาง";
+		}else if ($pm >= 26){
+			$lv_pm  = "คุณภาพอากาศตอนนี้อยู่ระดับดี";
+		}else {
+			$lv_pm = "คุณภาพอากาศตอนนี้อยู่ระดับดีมาก";
+		}
+		$rep_msg['text'] = "ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm";
+		$rep_msg['type']='text';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
@@ -52,24 +70,6 @@
 			$lv_rain = "ฝนไม่ตก";
 		}
 		$rep_msg['text'] = $lv_rain;
-		$rep_msg['type']='text';
-	}else if($recv_msg == "คุณภาพอากาศ") {
-		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$pm = $strRet->feeds[0]->field3;
-		if ($pm >= 201){
-			$lv_pm = "คุณภาพอากาศมีผลกระทบต่อสุขภาพ";
-		}else if ($pm >= 101){
-			$lv_pm  = "คุณภาพอากาศเริ่มมีผลกระทบต่อสุขภาพ";
-		}else if ($pm >= 51){
-			$lv_pm  = "คุณภาพอากาศปานกลาง";
-		}else if ($pm >= 26){
-			$lv_pm  = "คุณภาพอากาศดี";
-		}else {
-			$lv_pm = "คุณภาพอากาศดีมาก";
-		}
-		$rep_msg['text'] = $lv_pm;
 		$rep_msg['type']='text';
 	}else if($recv_msg == "รูปภาพสถานที่") {
 		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
