@@ -25,7 +25,15 @@
 		$strRet = json_decode($strRet);
 		$temp = $strRet->feeds[0]->field1;
 		$temp2 = number_format($temp,2);
-		$rep_msg['text'] = "$temp2 องศา";
+		$rep_msg['text'] = "อุณหภูมิตอนนี้ $temp2 องศา";
+		$rep_msg['type']='text';
+	}else if($recv_msg == "ความชื้น") {
+		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
+		$strRet = file_get_contents($url);
+		$strRet = json_decode($strRet);
+		$hum = $strRet->feeds[0]->field2;
+		$hum2 = number_format($hum,0);
+		$rep_msg['text'] = "ความชื้นสัมพัทธ์ในอากาศ $hum2 %";
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -67,16 +75,6 @@
 		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['type']='image';
-	}else if($recv_msg == "อาทิตย์ขึ้น-ตก") {
-		$url = "https://api.sunrise-sunset.org/json?";
-		$strRet = file_get_contents($url);
-		$strRet = json_decode($strRet);
-		$sunset = $strRet->results->sunset;
-		$sunrise = $strRet->results->sunrise;
-		$sunset2 = "\nอาทิตย์ตก $sunset";
-		$sunrise2 = "อาทิตย์ขึ้น $sunrise";
-		$rep_msg['text'] = "$sunrise2 $sunset2" ;
-		$rep_msg['type']='text';
 	}else if($recv_msg == "Dashboard") {
 		$rep_msg['text'] = "https://lab-iot.herokuapp.com/";
 		$rep_msg['type']='text';
