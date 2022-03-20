@@ -164,9 +164,10 @@
 	}
 		
 
-	$messages['messages'][0] =  ($rep_msg,$rep_msg2);
+	$messages['messages'][0] =  $rep_msg;
+	$messages1['messages'][0] =  $rep_msg2;
 
-	$encodeJson = json_encode($messages);
+	$encodeJson = json_encode($messages,$messages1);
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
  	$LINEDatas['token'] = "NVnIbDiVadUFT9jjco1mPfYVcTUQ3O7cEqGV8U8IpWykAm05iT6CoYmbf10J+YJZhZzUMLWe4sJGOcjLZAm2ofyv8/dtH0ILQPGaUeQgOMTrLTXfb15Nb1Ak3A7Bo9wuxWxP/QqzNRd+AuuTQttNLAdB04t89/1O/w1cDnyilFU=";
