@@ -59,6 +59,7 @@
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
 		$rain = $strRet->feeds[0]->field6;
+		$rain2 = number_format($rain2,1);
 		if ($rain >= 90.1){
 			$lv_rain = "ฝนตกหนักมาก";
 		}else if ($rain >= 35.1){
@@ -70,7 +71,7 @@
 		}else {
 			$lv_rain = "ฝนไม่ตก";
 		}
-		$rep_msg['text'] = "$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain มิลลิเมตร";
+		$rep_msg['text'] = "$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain2 มิลลิเมตร";
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ลม") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -78,6 +79,7 @@
 		$strRet = json_decode($strRet);
 		$wind_avg = $strRet->feeds[0]->field5;
 		$wind_direc = $strRet->feeds[0]->field7;
+		$wind_avg2 = number_format($wind_avg,0);
 		if ($wind_direc >= 360){
 			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศเหนือ";
 		}else if ($wind_direc >= 315){
@@ -95,7 +97,7 @@
 		}else if ($wind_direc >= 45){
 			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงเหนือ";
 		}
-		$rep_msg['text'] = "$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg km/h";
+		$rep_msg['text'] = "$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg2 km/h";
 		$rep_msg['type']='text';
 	}else if($recv_msg == "ภาพรวม") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -109,6 +111,8 @@
 		$wind_direc = $strRet->feeds[0]->field7;
 		$temp2 = number_format($temp,2);
 		$hum2 = number_format($hum,0);
+		$rain2 = number_format($rain2,1);
+		$wind_avg2 = number_format($wind_avg,0);
 		if ($pm >= 201){
 			$lv_pm = "คุณภาพอากาศตอนนี้มีผลกระทบต่อสุขภาพ";
 		}else if ($pm >= 101){
@@ -149,10 +153,9 @@
 			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงเหนือ";
 		}
 		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain มิลลิเมตร \n5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg km/h";
-		$rep_msg2['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
-		$rep_msg2['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
-		$rep_msg2['type']='image';
-		$rep_msg['type']='text';
+		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['type']='text','image';
 	}else{
 		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
