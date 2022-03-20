@@ -153,21 +153,20 @@
 			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงเหนือ";
 		}
 		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain มิลลิเมตร \n5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg km/h";
-		$rep_msg2['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
-		$rep_msg2['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
+		$rep_msg['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['type']='text';
-		$rep_msg2['type']='image';
+		$rep_msg['type']='image';
 	}else{
-		$nsend = "กรุณาพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ฝน \n - คุณภาพอากาศ \n - รูปภาพสถานที่ \n - Dashboard \n ขอบคุณครับ";
+		$nsend = "ท่านสามารถกดเมนูหรือพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ความชื้น \n - PM 2.5 \n - ฝน \n - ลม \n ภาพรวม \nขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';
 	}
 		
 
 	$messages['messages'][0] =  $rep_msg;
-	$messages1['messages'][1] =  $rep_msg2;
 
-	$encodeJson = json_encode($messages,$messages1);
+	$encodeJson = json_encode($messages);
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
  	$LINEDatas['token'] = "NVnIbDiVadUFT9jjco1mPfYVcTUQ3O7cEqGV8U8IpWykAm05iT6CoYmbf10J+YJZhZzUMLWe4sJGOcjLZAm2ofyv8/dtH0ILQPGaUeQgOMTrLTXfb15Nb1Ak3A7Bo9wuxWxP/QqzNRd+AuuTQttNLAdB04t89/1O/w1cDnyilFU=";
