@@ -24,14 +24,16 @@
 	/*Return HTTP Request 200*/
 	http_response_code(200);
 
-	function getFormatTextMessage($text)
+	function getFormatTextMessage($text )
 	{
-		if ($text == "สวัสดี")
-		$datas = "สวัสดีครับ";
+		if ($text == "สวัสดี"){
+			$datas = "สวัสดีครับ";
 		$datas['type'] = 'text';
 		$datas['text'] = $text;
 
 		return $datas;
+		}
+		
 	}
 
 	function sentMessage($encodeJson,$datas)
