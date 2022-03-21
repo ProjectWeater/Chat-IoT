@@ -8,6 +8,7 @@
 	file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
 
 	$replyToken = $deCode['events'][0]['replyToken'];
+	$replyToken2 = $deCode['events'][0]['replyToken'];
 	$recv_msg = $deCode['events'][0]['message']['text'];
 
 
@@ -15,7 +16,7 @@
 	$messages = [];
 	$messages2 = [];
 	$messages['replyToken'] = $replyToken;
-	$messages2['replyToken'] = $replyToken;
+	$messages2['replyToken'] = $replyToken2;
 	$rep_msg = [];
 	$rep_msg2 = [];
 
