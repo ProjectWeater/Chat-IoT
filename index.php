@@ -12,7 +12,7 @@
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
+	$messages['messages'][0] = getFormatTextMessage($datas);
 
 	$encodeJson = json_encode($messages);
 
@@ -26,7 +26,8 @@
 
 	function getFormatTextMessage($text)
 	{
-		$datas = [];
+		if ($text == "สวัสดี")
+		$datas = "สวัสดีครับ";
 		$datas['type'] = 'text';
 		$datas['text'] = $text;
 
