@@ -193,7 +193,7 @@
 		  CURLOPT_TIMEOUT => 30,
 		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		  CURLOPT_CUSTOMREQUEST => "POST",
-		  CURLOPT_POSTFIELDS => $encodeJson,
+		  CURLOPT_POSTFIELDS => ($encodeJson,$encodeJson2),
 		  CURLOPT_HTTPHEADER => array(
 		    "authorization: Bearer ".$datas['token'],
 		    "cache-control: no-cache",
