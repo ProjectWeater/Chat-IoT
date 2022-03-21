@@ -12,7 +12,7 @@
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage($LINEDatas);
+	$messages['messages'][0] = getFormatTextMessage($datas);
 
 	$encodeJson = json_encode($messages);
 
