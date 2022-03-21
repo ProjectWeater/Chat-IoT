@@ -13,6 +13,7 @@
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
 	$messages['messages'][0] = getFormatTextMessage($resp);
+	$resp = [];
 
 	$encodeJson = json_encode($messages);
 
