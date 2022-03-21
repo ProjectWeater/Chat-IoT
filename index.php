@@ -12,7 +12,7 @@
 
 	$messages = [];
 	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage($datas);
+	$messages['messages'][0] = getFormatTextMessage($text);
 
 	$encodeJson = json_encode($messages);
 
@@ -24,12 +24,12 @@
 	/*Return HTTP Request 200*/
 	http_response_code(200);
 
-	function getFormatTextMessage($text )
+	function getFormatTextMessage($text)
 	{
 		if ($text == "สวัสดี"){
-			$datas = "สวัสดีครับ";
-		$datas['type'] = 'text';
-		$datas['text'] = $text;
+			$datas = [];
+			$datas['type'] = 'text';
+			$datas['text'] = $text;
 
 		return $datas;
 		}
