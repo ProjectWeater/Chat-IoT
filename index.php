@@ -19,7 +19,7 @@
 	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "อุณหภูมิ") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -29,7 +29,7 @@
 		$temp2 = number_format($temp,2);
 		$rep_msg['text'] = "อุณหภูมิตอนนี้ $temp2 องศา";
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "ความชื้น") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -39,7 +39,7 @@
 		$hum2 = number_format($hum,0);
 		$rep_msg['text'] = "ความชื้นสัมพัทธ์ในอากาศ $hum2 %";
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "PM 2.5") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -59,7 +59,7 @@
 		}
 		$rep_msg['text'] = "ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm";
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "ฝน") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -80,7 +80,7 @@
 		}
 		$rep_msg['text'] = "$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain2 มิลลิเมตร";
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "ลม") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -108,7 +108,7 @@
 		}
 		$rep_msg['text'] = "$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg2 km/h";
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "ภาพรวม") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -172,7 +172,7 @@
 		$nsend = "ท่านสามารถกดเมนูหรือพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ความชื้น \n - PM 2.5 \n - ฝน \n - ลม \n - ภาพรวม \nขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = " ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
 	}
 		
