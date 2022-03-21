@@ -175,13 +175,13 @@
 
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
  	$LINEDatas['token'] = "NVnIbDiVadUFT9jjco1mPfYVcTUQ3O7cEqGV8U8IpWykAm05iT6CoYmbf10J+YJZhZzUMLWe4sJGOcjLZAm2ofyv8/dtH0ILQPGaUeQgOMTrLTXfb15Nb1Ak3A7Bo9wuxWxP/QqzNRd+AuuTQttNLAdB04t89/1O/w1cDnyilFU=";
-  	$results = sentMessage($encodeJson,$encodeJson2,$LINEDatas);
+  	$results = sentMessage($encodeJson,$LINEDatas);
 
 	/*Return HTTP Request 200*/
 	http_response_code(200);
 
 
-	function sentMessage($encodeJson,$encodeJson2,$datas)
+	function sentMessage($encodeJson,$datas)
 	{
 		$datasReturn = [];
 		$curl = curl_init();
@@ -193,7 +193,7 @@
 		  CURLOPT_TIMEOUT => 30,
 		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		  CURLOPT_CUSTOMREQUEST => "POST",
-		  CURLOPT_POSTFIELDS => ($encodeJson,$encodeJson2),
+		  CURLOPT_POSTFIELDS => $encodeJson,
 		  CURLOPT_HTTPHEADER => array(
 		    "authorization: Bearer ".$datas['token'],
 		    "cache-control: no-cache",
