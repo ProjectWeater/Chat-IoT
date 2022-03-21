@@ -19,7 +19,7 @@
 	if($recv_msg == "สวัสดี") {
 		$rep_msg ['text'] = "สวัสดีครับ";
 		$rep_msg ['type'] = 'text';
-		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรดีครับ";
 		$rep_msg2 ['type'] = 'text';
 	}else if($recv_msg == "อุณหภูมิ") {
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
@@ -90,21 +90,21 @@
 		$wind_direc = $strRet->feeds[0]->field7;
 		$wind_avg2 = number_format($wind_avg,0);
 		if ($wind_direc >= 360){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศเหนือ";
+			$lv_wind = "ทิศทางลมอยู่ทิศเหนือ";
 		}else if ($wind_direc >= 315){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันตกเฉียงเหนือ";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันตกเฉียงเหนือ";
 		}else if ($wind_direc >= 270){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันตก";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันตก";
 		}else if ($wind_direc >= 225){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันตกเฉียงใต้";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันตกเฉียงใต้";
 		}else if ($wind_direc >= 180){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศใต้";
+			$lv_wind = "ทิศทางลมอยู่เป็นทิศใต้";
 		}else if ($wind_direc >= 135){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงใต้";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันออกเฉียงใต้";
 		}else if ($wind_direc >= 90){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออก";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันออก";
 		}else if ($wind_direc >= 45){
-			$lv_wind = "ทิศทางลม $wind_direc องศา เป็นทิศตะวันออกเฉียงเหนือ";
+			$lv_wind = "ทิศทางลมอยู่ทิศตะวันออกเฉียงเหนือ";
 		}
 		$rep_msg['text'] = "$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg2 km/h";
 		$rep_msg['type']='text';
@@ -172,7 +172,7 @@
 		$nsend = "ท่านสามารถกดเมนูหรือพิมพ์คำสั่ง ดังนี้ \n - อุณหภูมิ \n - ความชื้น \n - PM 2.5 \n - ฝน \n - ลม \n - ภาพรวม \nขอบคุณครับ";
 		$rep_msg['text'] = $nsend;
 		$rep_msg['type']='text';
-		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
+		$rep_msg2 ['text'] = "ต้องการทราบอะไรดีครับ";
 		$rep_msg2 ['type'] = 'text';
 	}
 		
