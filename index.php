@@ -68,7 +68,7 @@
 		$rain = $strRet->feeds[0]->field4;
 		$rain24 = $strRet->feeds[0]->field6;
 		$rain3 = number_format($rain24,1);
-		$rain2 = number_format($rain2,1);
+		$rain2 = number_format($rain,1);
 		if ($rain >= 90.1){
 			$lv_rain = "ฝนตกหนักมาก";
 		}else if ($rain >= 35.1){
@@ -120,11 +120,13 @@
 		$hum = $strRet->feeds[0]->field2;
 		$pm = $strRet->feeds[0]->field3;
 		$wind_avg = $strRet->feeds[0]->field5;
-		$rain = $strRet->feeds[0]->field6;
+		$rain = $strRet->feeds[0]->field4;
+		$rain24 = $strRet->feeds[0]->field6;		
 		$wind_direc = $strRet->feeds[0]->field7;
+		$rain3 = number_format($rain24,1);
 		$temp2 = number_format($temp,2);
 		$hum2 = number_format($hum,0);
-		$rain2 = number_format($rain2,1);
+		$rain2 = number_format($rain,1);
 		$wind_avg2 = number_format($wind_avg,0);
 		if ($pm >= 201){
 			$lv_pm = "คุณภาพอากาศตอนนี้มีผลกระทบต่อสุขภาพ";
@@ -165,7 +167,7 @@
 		}else if ($wind_direc >= 45){
 			$lv_wind = "ทิศทางลมอยู่ทิศตะวันออกเฉียงเหนือ";
 		}
-		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain2 มิลลิเมตร \n5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg2 km/h";
+		$rep_msg['text'] = "1.อุณหภูมิตอนนี้ $temp2 องศา \n2.ความชื้นสัมพัทธ์ในอากาศ $hum2 % \n3.ค่า PM 2.5 อยู่ที่ $pm µg./m3 ทำให้$lv_pm \n4.$lv_rain โดยมีปริมาณฝนใน 1 ชม อยู่ที่ $rain2 มิลลิเมตร และปริมาณฝนใน 1 วัน อยู่ที่ $rain3 มิลลิเมตร \n5.$lv_wind โดยความเร็วลมเฉลี่ยใน 1 นาที อยู่ที่ $wind_avg2 km/h";
 		$rep_msg2['originalContentUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg2['previewImageUrl'] = "https://firebasestorage.googleapis.com/v0/b/esp-firebase-demo-c8454.appspot.com/o/data%2Fphoto.jpg?alt=media&token=4415c22a-a0ba-4813-a7c0-5691f71ed343";
 		$rep_msg['type']='text';
