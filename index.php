@@ -65,7 +65,9 @@
 		$url = "https://api.thingspeak.com/channels/1555446/feeds.json?results=1";
 		$strRet = file_get_contents($url);
 		$strRet = json_decode($strRet);
-		$rain = $strRet->feeds[0]->field6;
+		$rain = $strRet->feeds[0]->field4;
+		$rain24 = $strRet->feeds[0]->field6;
+		$rain3 = number_format($rain24,1);
 		$rain2 = number_format($rain2,1);
 		if ($rain >= 90.1){
 			$lv_rain = "ฝนตกหนักมาก";
@@ -78,7 +80,7 @@
 		}else {
 			$lv_rain = "ฝนไม่ตก";
 		}
-		$rep_msg['text'] = "$lv_rain โดยมีปริมาณฝนตกอยู่ที่ $rain2 มิลลิเมตร";
+		$rep_msg['text'] = "$lv_rain โดยมีปริมาณฝนตกใน 1 ชม อยู่ที่ $rain2 มิลลิเมตร และปริมาณฝนตกใน 1 วัน อยู่ที่ $rain24 มิลลิเมตร";
 		$rep_msg['type']='text';
 		$rep_msg2 ['text'] = "ต้องการทราบอะไรเพิ่มไหมครับ";
 		$rep_msg2 ['type'] = 'text';
